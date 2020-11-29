@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="c_fafafa">#fafafa</color>
+    <color name="c_323233">#323233</color>
+    <color name="c_ce2029">#ce2029</color>
+    <color name="c_baf2ef">#baf2ef</color>
+    <color name="c_0077be">#0077BE</color>
+    <color name="c_b0c4de">	#B0C4DE</color>
+    <color name="c_75f336">#75F336</color>
+    <color name="c_db7093">#DB7093</color>
+</resources>

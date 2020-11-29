@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="pokemonType"
+            type="com.hsnbyhn.pokeinfo.data.PokemonInfo.PokemonType" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:background="@{pokemonType.type.name}"
+        android:layout_marginStart="8dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:text="@{pokemonType.type.name}"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/c_323233"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</layout>
