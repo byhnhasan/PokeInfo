@@ -29,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:minWidth="400dp"
+            android:minHeight="500dp"
             android:padding="16dp">
 
             <androidx.cardview.widget.CardView
@@ -120,6 +121,139 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/background"
                 app:layout_constraintTop_toBottomOf="@id/height" />
+
+            <!-- HP  -->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/hp_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/background"
+                android:text="HP"/>
+
+
+
+            <ProgressBar
+                android:id="@+id/hp_key"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="32dp"
+                app:layout_constraintTop_toBottomOf="@id/background"
+                app:layout_constraintStart_toEndOf="@id/hp_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:progressDrawable="@drawable/rounderd_rectangle_progress_bar"
+                android:max="100"
+                android:progressTint="@color/c_ce2029"
+                android:scaleY="1"
+                app:value="@{viewModel.hp}"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+
+            <!--  ATK -->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/atk_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hp_title"
+                android:text="ATK"/>
+
+
+
+            <ProgressBar
+                android:id="@+id/atk_key"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="32dp"
+                app:layout_constraintTop_toBottomOf="@id/hp_key"
+                app:layout_constraintStart_toEndOf="@id/atk_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:progressDrawable="@drawable/rounderd_rectangle_progress_bar"
+                android:max="100"
+                android:progressTint="@color/c_ffff00"
+                android:scaleY="1"
+                app:value="@{viewModel.atk}"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+            <!-- DEF  -->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/def_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/atk_title"
+                android:text="DEF"/>
+
+
+
+            <ProgressBar
+                android:id="@+id/def_key"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="32dp"
+                app:layout_constraintTop_toBottomOf="@id/atk_key"
+                app:layout_constraintStart_toEndOf="@id/def_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:progressDrawable="@drawable/rounderd_rectangle_progress_bar"
+                android:max="100"
+                android:progressTint="@color/c_75f336"
+                android:scaleY="1"
+                app:value="@{viewModel.def}"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+            <!-- SPD  -->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/spd_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/def_title"
+                android:text="SPD"/>
+
+
+
+            <ProgressBar
+                android:id="@+id/spd_key"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="32dp"
+                app:layout_constraintTop_toBottomOf="@id/def_key"
+                app:layout_constraintStart_toEndOf="@id/spd_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:progressDrawable="@drawable/rounderd_rectangle_progress_bar"
+                android:max="100"
+                android:progressTint="@color/c_0077be"
+                android:scaleY="1"
+                app:value="@{viewModel.spd}"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

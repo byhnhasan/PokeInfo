@@ -1,7 +1,9 @@
 package com.hsnbyhn.pokeinfo.binding
 
-import android.graphics.drawable.GradientDrawable
+import android.animation.ObjectAnimator
+import android.view.animation.DecelerateInterpolator
 import android.widget.LinearLayout
+import android.widget.ProgressBar
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.cardview.widget.CardView
 import androidx.databinding.BindingAdapter
@@ -10,6 +12,7 @@ import com.github.florent37.glidepalette.BitmapPalette
 import com.github.florent37.glidepalette.GlidePalette
 import com.hsnbyhn.pokeinfo.R
 import com.hsnbyhn.pokeinfo.ui.view.KeyValueView
+
 
 /**
  * Created by hasanbayhan on 7.11.2020
@@ -43,4 +46,13 @@ fun bindTypeTextViewBackground(layout: LinearLayout, type: String?) {
 @BindingAdapter("key", "value")
 fun bindText(view: KeyValueView, key: String?, value: String?) {
     view.bindData(key.orEmpty(),value.orEmpty())
+}
+
+@BindingAdapter("value")
+fun bindProgressBar(bar: ProgressBar, value: Int) {
+    val animation = ObjectAnimator.ofInt(bar, "progress", value)
+    animation.duration = 1000 // 1 second
+
+    animation.interpolator = DecelerateInterpolator()
+    animation.start()
 }
