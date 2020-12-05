@@ -19,6 +19,13 @@
     android:background="@color/c_323233"
     tools:context=".ui.MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="PokeInfo"
+        android:background="@color/c_0077be"
+        app:titleTextColor="@color/c_fafafa" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"

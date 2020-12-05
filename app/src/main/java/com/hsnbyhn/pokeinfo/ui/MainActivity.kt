@@ -1,5 +1,6 @@
 package com.hsnbyhn.pokeinfo.ui
 
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.annotation.VisibleForTesting
@@ -24,6 +25,7 @@ class MainActivity : BaseActivity() {
             lifecycleOwner = this@MainActivity
             viewModel = vm.apply { }
         }
+        supportActionBar?.hide()
         binding.viewModel?.clickedItem?.observe(this, Observer {
             val fragment = PokemonDetailFragment.newInstance(it)
             fragment.show(supportFragmentManager, "POKEMON_DETAIL_FRAGMENT")
