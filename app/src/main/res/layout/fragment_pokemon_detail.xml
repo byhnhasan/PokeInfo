@@ -150,7 +150,7 @@
                 android:max="100"
                 android:progressTint="@color/c_ce2029"
                 android:scaleY="1"
-                app:value="@{viewModel.hp}"
+                android:progress="@{viewModel.hp}"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
 
 
@@ -184,7 +184,7 @@
                 android:max="100"
                 android:progressTint="@color/c_ffff00"
                 android:scaleY="1"
-                app:value="@{viewModel.atk}"
+                android:progress="@{viewModel.atk}"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
 
             <!-- DEF  -->
@@ -217,7 +217,7 @@
                 android:max="100"
                 android:progressTint="@color/c_75f336"
                 android:scaleY="1"
-                app:value="@{viewModel.def}"
+                android:progress="@{viewModel.def}"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
 
             <!-- SPD  -->
@@ -250,7 +250,7 @@
                 android:max="100"
                 android:progressTint="@color/c_0077be"
                 android:scaleY="1"
-                app:value="@{viewModel.spd}"
+                android:progress="@{viewModel.spd}"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

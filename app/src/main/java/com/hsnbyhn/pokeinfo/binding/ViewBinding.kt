@@ -47,12 +47,3 @@ fun bindTypeTextViewBackground(layout: LinearLayout, type: String?) {
 fun bindText(view: KeyValueView, key: String?, value: String?) {
     view.bindData(key.orEmpty(),value.orEmpty())
 }
-
-@BindingAdapter("value")
-fun bindProgressBar(bar: ProgressBar, value: Int) {
-    val animation = ObjectAnimator.ofInt(bar, "progress", value)
-    animation.duration = 1000 // 1 second
-
-    animation.interpolator = DecelerateInterpolator()
-    animation.start()
-}

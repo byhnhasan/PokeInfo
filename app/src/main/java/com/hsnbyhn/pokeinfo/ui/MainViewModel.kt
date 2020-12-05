@@ -4,14 +4,10 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
 import com.hsnbyhn.pokeinfo.adapter.PokemonItemListener
 import com.hsnbyhn.pokeinfo.base.BaseViewModel
-import com.hsnbyhn.pokeinfo.data.AnimationModel
 import com.hsnbyhn.pokeinfo.data.Pokemon
 import com.hsnbyhn.pokeinfo.repository.MainRepository
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 /**
  * Created by hasanbayhan on 4.10.2020
@@ -22,7 +18,7 @@ class MainViewModel @ViewModelInject constructor(
 ) : BaseViewModel(), PokemonItemListener  {
 
     val pokemonList: LiveData<List<Pokemon>>
-    val clickedItem: MutableLiveData<AnimationModel> = MutableLiveData()
+    val clickedItem: MutableLiveData<Pokemon?> = MutableLiveData()
 
     init {
         pokemonList = launchOnViewModelScope {
@@ -36,7 +32,7 @@ class MainViewModel @ViewModelInject constructor(
                 }
         }
 
-    override fun onItemClicked(model: AnimationModel) {
-        clickedItem.value = model
+    override fun onItemClicked(pokemon: Pokemon?) {
+        clickedItem.value = pokemon
     }
 }

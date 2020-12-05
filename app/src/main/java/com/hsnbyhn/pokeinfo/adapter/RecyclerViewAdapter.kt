@@ -3,7 +3,6 @@ package com.hsnbyhn.pokeinfo.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.hsnbyhn.pokeinfo.data.AnimationModel
 import com.hsnbyhn.pokeinfo.data.Pokemon
 import com.hsnbyhn.pokeinfo.databinding.PokemonItemViewBinding
 
@@ -30,7 +29,7 @@ class RecyclerViewAdapter(
             executePendingBindings()
             this.root.setOnClickListener {
 
-                listener?.onItemClicked(AnimationModel(items.getOrNull(position), it.x, it.y))
+                listener?.onItemClicked(items.getOrNull(position))
             }
         }
     }
@@ -45,5 +44,5 @@ class RecyclerViewAdapter(
 }
 
 interface PokemonItemListener {
-    fun onItemClicked(model: AnimationModel)
+    fun onItemClicked(pokemon: Pokemon?)
 }

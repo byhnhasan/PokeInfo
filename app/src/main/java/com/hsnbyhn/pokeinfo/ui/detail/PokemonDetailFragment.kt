@@ -1,29 +1,24 @@
 package com.hsnbyhn.pokeinfo.ui.detail
 
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.InsetDrawable
 import android.os.Bundle
-import android.renderscript.ScriptGroup
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.annotation.VisibleForTesting
-import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.LifecycleCoroutineScope
-import androidx.lifecycle.Observer
-import androidx.lifecycle.coroutineScope
 import com.hsnbyhn.pokeinfo.R
 import com.hsnbyhn.pokeinfo.data.Pokemon
-import com.hsnbyhn.pokeinfo.data.PokemonInfo
 import com.hsnbyhn.pokeinfo.databinding.FragmentPokemonDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
+
 
 /**
  * Created by hasanbayhan on 27.11.2020
@@ -53,9 +48,6 @@ class PokemonDetailFragment : DialogFragment() {
         }
         val back = ColorDrawable(Color.TRANSPARENT)
         dialog?.window?.setBackgroundDrawable(InsetDrawable(back, 20, 0, 20, 0))
-        vm.pokemonInfo.observe(this, Observer {
-            fillStats(it)
-        })
         return binding?.root
 
     }
@@ -63,15 +55,16 @@ class PokemonDetailFragment : DialogFragment() {
     override fun onStart() {
         super.onStart()
         dialog?.window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT)
+        val decorView = dialog?.window?.decorView
+        val animator = ObjectAnimator.ofPropertyValuesHolder(
+            decorView,
+            PropertyValuesHolder.ofFloat("scaleX", 0.0f, 1.0f),
+            PropertyValuesHolder.ofFloat("scaleY", 0.0f, 1.0f),
+            PropertyValuesHolder.ofFloat("alpha", 0.0f, 1.0f)
+        )
+        animator.duration = 1000
+        animator.start()
     }
-
-    private fun fillStats(pokemon: PokemonInfo?) {
-        viewLifecycleOwner.lifecycle.coroutineScope.launch {
-
-        }
-    }
-
-
 
     companion object {
 

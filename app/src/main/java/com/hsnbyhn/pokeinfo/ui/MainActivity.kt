@@ -25,7 +25,7 @@ class MainActivity : BaseActivity() {
             viewModel = vm.apply { }
         }
         binding.viewModel?.clickedItem?.observe(this, Observer {
-            val fragment = PokemonDetailFragment.newInstance(it.pokemon)
+            val fragment = PokemonDetailFragment.newInstance(it)
             fragment.show(supportFragmentManager, "POKEMON_DETAIL_FRAGMENT")
         })
     }
