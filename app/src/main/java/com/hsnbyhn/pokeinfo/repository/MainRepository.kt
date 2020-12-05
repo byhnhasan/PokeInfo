@@ -1,7 +1,6 @@
 package com.hsnbyhn.pokeinfo.repository
 
 import android.util.Log
-import androidx.annotation.WorkerThread
 import com.hsnbyhn.pokeinfo.network.PokeInfoApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow

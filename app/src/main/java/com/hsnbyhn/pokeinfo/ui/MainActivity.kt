@@ -22,10 +22,10 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding.apply {
             lifecycleOwner = this@MainActivity
-            viewModel = vm
+            viewModel = vm.apply { }
         }
         binding.viewModel?.clickedItem?.observe(this, Observer {
-            val fragment = PokemonDetailFragment.newInstance(it)
+            val fragment = PokemonDetailFragment.newInstance(it.pokemon)
             fragment.show(supportFragmentManager, "POKEMON_DETAIL_FRAGMENT")
         })
     }

@@ -2,12 +2,14 @@ package com.hsnbyhn.pokeinfo.ui.detail
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.InsetDrawable
 import android.os.Bundle
 import android.renderscript.ScriptGroup
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
@@ -49,12 +51,18 @@ class PokemonDetailFragment : DialogFragment() {
             lifecycleOwner = viewLifecycleOwner
             viewModel = vm.apply { getSelectedPokemonName(pokemon!!.name) }
         }
-        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        val back = ColorDrawable(Color.TRANSPARENT)
+        dialog?.window?.setBackgroundDrawable(InsetDrawable(back, 20, 0, 20, 0))
         vm.pokemonInfo.observe(this, Observer {
             fillStats(it)
         })
         return binding?.root
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        dialog?.window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT)
     }
 
     private fun fillStats(pokemon: PokemonInfo?) {
@@ -69,7 +77,7 @@ class PokemonDetailFragment : DialogFragment() {
 
         private const val POKEMON_ITEM = "POKEMON_ITEM"
 
-        fun newInstance(item: Pokemon) =
+        fun newInstance(item: Pokemon?) =
             PokemonDetailFragment().apply {
                 this.arguments = Bundle().apply {
                     putParcelable(POKEMON_ITEM, item)

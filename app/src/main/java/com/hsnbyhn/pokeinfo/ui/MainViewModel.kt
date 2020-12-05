@@ -1,14 +1,17 @@
 package com.hsnbyhn.pokeinfo.ui
 
-import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
+import androidx.lifecycle.viewModelScope
 import com.hsnbyhn.pokeinfo.adapter.PokemonItemListener
 import com.hsnbyhn.pokeinfo.base.BaseViewModel
+import com.hsnbyhn.pokeinfo.data.AnimationModel
 import com.hsnbyhn.pokeinfo.data.Pokemon
 import com.hsnbyhn.pokeinfo.repository.MainRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 /**
  * Created by hasanbayhan on 4.10.2020
@@ -19,22 +22,21 @@ class MainViewModel @ViewModelInject constructor(
 ) : BaseViewModel(), PokemonItemListener  {
 
     val pokemonList: LiveData<List<Pokemon>>
-    val clickedItem: MutableLiveData<Pokemon> = MutableLiveData()
-    val pageNum: MutableLiveData<Int> = MutableLiveData(0)
+    val clickedItem: MutableLiveData<AnimationModel> = MutableLiveData()
 
     init {
         pokemonList = launchOnViewModelScope {
             mainRepository.fetchPokemonList(
-                pageNum.value ?: 0,
+                0,
                 onSuccess = {
-                    pageNum.value?.plus(1)
-                    Log.d("temp", "temp")}
-            ).asLiveData()
+                    //TODO: Add success logic
+                }
 
+                    ).asLiveData()
+                }
         }
-    }
 
-    override fun onItemClicked(pokemon: Pokemon?) {
-        clickedItem.value = pokemon
+    override fun onItemClicked(model: AnimationModel) {
+        clickedItem.value = model
     }
 }
