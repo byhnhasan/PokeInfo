@@ -19,7 +19,7 @@ class MainRepository @Inject constructor(
         page: Int,
         onSuccess: () -> Unit
     ) = flow {
-        val response = pokeInfoApi.fetchPokemonList(20, page * 20)
+        val response = pokeInfoApi.fetchPokemonList(60, page * 60)
         // FIXME: Handle error and success cases
         if(!response.results.isNullOrEmpty()) {
             onSuccess()
