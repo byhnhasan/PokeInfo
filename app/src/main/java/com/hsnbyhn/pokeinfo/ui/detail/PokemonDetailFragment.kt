@@ -68,7 +68,7 @@ class PokemonDetailFragment : DialogFragment() {
 
     companion object {
 
-        private const val POKEMON_ITEM = "POKEMON_ITEM"
+        const val POKEMON_ITEM = "POKEMON_ITEM"
 
         fun newInstance(item: Pokemon?) =
             PokemonDetailFragment().apply {
