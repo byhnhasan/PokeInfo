@@ -1,13 +1,7 @@
 # PokeInfo
 
-<p align="left">
-<img src="/previews/screen_shot.png"/>
-<img src="/previews/gif_one.gif"/>
-<img src="/previews/gif_two.gif"/>
-</p>
-
-
 Pokeinfo is a small application based on latest Android tech stack and MVVM architecture.
+<img src="/previews/gif_one.gif" align="right" width="32%"/>
 
 #Tech Stack
 
