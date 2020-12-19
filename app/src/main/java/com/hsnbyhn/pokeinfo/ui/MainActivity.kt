@@ -1,6 +1,5 @@
 package com.hsnbyhn.pokeinfo.ui
 
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.annotation.VisibleForTesting

@@ -1,9 +1,6 @@
 package com.hsnbyhn.pokeinfo.binding
 
-import android.animation.ObjectAnimator
-import android.view.animation.DecelerateInterpolator
 import android.widget.LinearLayout
-import android.widget.ProgressBar
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.cardview.widget.CardView
 import androidx.databinding.BindingAdapter
