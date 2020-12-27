@@ -5,11 +5,11 @@ Pokeinfo is a small application based on latest Android tech stack and MVVM arch
 
 #Tech Stack
 
-#Asynchronous -> Kotlin Coroutines + Flow
-#Dependency Injection -> Hilt(alpha)
-#UI -> LiveData, Lifecycle, ViewModel
-#Architecture -> MVVM(Model -> DataBinding -> View -> ViewModel), Repository pattern
-#Network -> Retrofit2, OkHttp3
+- Asynchronous -> Kotlin Coroutines + Flow
+- Dependency Injection -> Hilt(alpha)
+- UI -> LiveData, Lifecycle, ViewModel
+- Architecture -> MVVM(Model -> DataBinding -> View -> ViewModel), Repository pattern
+- Network -> Retrofit2, OkHttp3
 
 ## Open API
 
